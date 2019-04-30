@@ -17,8 +17,10 @@ Primary questions of interest include:
 
 ### Executive Summary
 
-The production used in the analysis was Ridge Regression, and the RMSE 208K for a 1 unit move in Standard Deviation Interpretation of RMSE
-Important Features/Weights (Interpretate the top 2-3)
+This analysis starts off by collecting data from Yelp and the Los Angeles County Assessor's Office for restaurants and home values in Los Angeles, respectively. Numerous models were run, ranging from simple linear regression to Random Forests regression. The final production model used was based on Ridge Regression, and its Root Mean Squared Error (RMSE) was $208,000.
+
+Important Features/Weights (Interpret the top 2-3)
+
 Summarize clustering methodology and final model results
 
 ---
