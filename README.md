@@ -17,11 +17,16 @@ Primary questions of interest include:
 
 ### Executive Summary
 
-This analysis starts off by collecting data from Yelp and the Los Angeles County Assessor's Office for restaurants and home values in Los Angeles, respectively. Numerous models were run, ranging from simple linear regression to Random Forests regression. The final production model used was based on Ridge Regression, and its Root Mean Squared Error (RMSE) was $208,000.
+This analysis starts off by collecting data from Yelp and the Los Angeles County Assessor's Office for restaurants and home values in Los Angeles, respectively. Numerous models were run, ranging from simple linear regression to Random Forests regression. 
 
 Important Features/Weights (Interpret the top 2-3)
 
-Summarize clustering methodology and final model results
+### Summarize clustering methodology and final model results
+KMeans clustering  utilized as the Unsupervised model to cluster homes and restaurants together based off latitude and longitude cooridinates. KMeans did a better job than HDBScan in creating homogeneous clusters (HDBScan was leaving ~30% of properties as unclassified).
+
+The final production model used was based on Ridge Regression, and its Root Mean Squared Error (RMSE) was $208,000. This model was overfit along with all the other models but scored highest on the test set (unseen data) at R-Squared of 0.65.
+
+Our model predicted prices of home clusters on the lower end of the price range better than more expensive home clusters. We had sparse representation of restaurants in the more expensive home clusters. If possible, more restaurant information need to be gathered in those neighborhoods.
 
 ---
 
@@ -41,13 +46,12 @@ Yelp Restaurant data: Data for 30K restaurants was collected via the Yelp API (Y
 |**zipcode**|*int*|zipcde of the restaurant|
 |**latitude**|*float*|latitude coordinates|
 |**longitude**|*float*|longitude coordinates|
+|**distance_centroid**|*float*|distance from home/restaurant from centroid|
 
 ---
 
 ### Summary & Next Steps
-
 More robust meta data on restaurants is needed to produce more accurate predictions(i.e. more accurate categories, fast food vs dine-in, etc.). While creating restaurant clusters based on the latitude and longitude did little to improve the model, clustering restaurants based on the proximity to one another may prove to be more helpful. In addition, we'd like to build an interactive web application that allows users to segment the city (based on home values or restaurant price) and see the concentration of restaurants in that area via Heroku. The current visualization is only accessible on the local machine on which it was created.
-
 
 ---
 
