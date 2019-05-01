@@ -17,7 +17,7 @@ Primary questions of interest include:
 
 ### Executive Summary
 
-This analysis starts off by collecting data from Yelp and the Los Angeles County Assessor's Office for restaurants and home values in Los Angeles, respectively. Numerous models were run, ranging from simple linear regression to Random Forests regression. we started off with grouping the data by zip codes (103 Los Angeles zip codes). We then created our 103 of our own clusters, against which to compare our baseline models. 
+This analysis starts off by collecting data from Yelp and the Los Angeles County Assessor's Office for restaurants and home values in Los Angeles, respectively. Numerous models were run, ranging from simple linear regression to Random Forests regression. we started off with grouping the data by zip codes (103 Los Angeles zip codes). We then created 103 of our own clusters, against which to compare our baseline models. 
 
 ## Clustering methodology and Final Model Results
 KMeans clustering  utilized as the Unsupervised model to cluster homes and restaurants together based off latitude and longitude cooridinates. KMeans did a better job than HDBScan in creating homogeneous clusters (HDBScan was leaving ~30% of properties as unclassified).
