@@ -19,7 +19,7 @@ Primary questions of interest include:
 
 This analysis starts off by collecting data from Yelp and the Los Angeles County Assessor's Office for restaurants and home values in Los Angeles, respectively. Numerous models were run, ranging from simple linear regression to Random Forests regression. we started off with grouping the data by zip codes (103 Los Angeles zip codes). We then created 103 of our own clusters, against which to compare our baseline models. 
 
-## Clustering methodology and Final Model Results
+#### Clustering methodology and Final Model Results
 KMeans clustering  utilized as the Unsupervised model to cluster homes and restaurants together based off latitude and longitude cooridinates. KMeans did a better job than HDBScan in creating homogeneous clusters (HDBScan was leaving ~30% of properties as unclassified).
 
 The final production model used was based on Ridge Regression, and its Root Mean Squared Error (RMSE) was $208,000. This model was overfit along with all the other models but scored highest on the test set (unseen data) at R-Squared of 0.65.
